@@ -1,0 +1,26 @@
+{
+    "name": "Java devcontainer",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "devcontainer-example-workflow",
+    "workspaceFolder": "/work",
+    "shutdownAction": "stopCompose",
+    "initializeCommand": "echo 'Running before container creation...'",
+    "postCreateCommand": "java -version && mvn -v && git --version",
+    "features": {},
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "SonarSource.sonarlint-vscode",
+                "google.google-java-format"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "[java]": {
+                    "editor.defaultFormatter": "redhat.java"
+                }
+            }
+        }
+    },
+    "forwardPorts": [],  
+    "remoteUser": "root"
+}
