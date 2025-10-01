@@ -1,0 +1,26 @@
+{
+    "name": "Java devcontainer",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "devcontainer-example-workflow",
+    "workspaceFolder": "/workspace",
+    "shutdownAction": "stopCompose",
+    "initializeCommand": "echo 'Running before container creation...'",
+    "postCreateCommand": "java -version && mvn -v && git --version",
+    "features": {},
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "SonarSource.sonarlint-vscode",
+                "eamodio.gitlens"
+            ]
+        }
+    },
+    "forwardPorts": [
+        9000
+    ],             
+    "remoteUser": "root"
+}
