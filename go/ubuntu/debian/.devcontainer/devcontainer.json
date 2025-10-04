@@ -1,0 +1,20 @@
+{
+  "name": "Dev Container",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer-with-kind-example",
+  "workspaceFolder": "/work",
+  "shutdownAction": "stopCompose",
+  "initializeCommand": "echo 'Running before container creation...' && ./create-network.sh",
+  "postCreateCommand": "go version && git --version",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "customizations": {
+    "vscode": {
+        "extensions": [
+            "golang.go"
+        ]
+    }
+  },
+  "remoteUser": "root"
+}
